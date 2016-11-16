@@ -34,6 +34,6 @@ Route::group(['prefix'=>'admin','middleware'=>'auth', 'as'=>'admin.'], function(
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', ['as'=>'home','uses'=>'HomeController@index']);
 
-
+Route::post('/send', ['as'=>'send','uses'=>'ContactController@sendEmail']);

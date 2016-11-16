@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 
 use Givel\Http\Requests;
 
-class ConsortiumController extends Controller
+class SchedulingController extends Controller
 {
-    public function index()
-    {
-    	
-    }
+    //
 }

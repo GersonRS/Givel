@@ -46,6 +46,7 @@
                         @if(Auth::user())
                         <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
                         <li><a href="{{ route('admin.products.index') }}">Produtos</a></li>
+                        <li><a href="{{ route('send') }}">envia e-mail</a></li>
                         @endif
                     </ul>
 
