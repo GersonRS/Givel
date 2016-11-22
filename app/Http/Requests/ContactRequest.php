@@ -13,7 +13,7 @@ class ContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required'
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo nome é obrigatório',
+            'email.required' => 'O campo email é obrigatório',
+            'message.required' => 'O campo mensagem é obrigatório'
         ];
     }
 }

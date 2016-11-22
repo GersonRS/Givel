@@ -13,7 +13,7 @@ class AdminProductRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,8 +25,24 @@ class AdminProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'description' => 'required',
             'price' => 'required',
             'category_id' => 'required'
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo nome é obrigatório',
+            'description.required' => 'O campo descrição é obrigatório',
+            'price.required' => 'O campo preço é obrigatório',
+            'category_id.required'=>'O campo categoria é obrigatório'
         ];
     }
 }
